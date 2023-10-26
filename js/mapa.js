@@ -10,3 +10,5 @@ function crearMapa() {
 
     var marker = L.marker(coords).addTo(map);
 }
+
+crearMapa();
