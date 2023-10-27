@@ -30,7 +30,7 @@ function pintarProductos (resultados) {
                     <div class='card-body'>
                         <img src="${resultado.thumbnail}" class="card-img-top" alt="Producto">
                         <h6 class='card-title'>${resultado.title}</h6>
-                        <p class='card-text'>Precio: $${resultado.price}</p>
+                        <p class='card-text'>$${resultado.price.toLocaleString()}</p>
                         <p class='card-text'>Vendedor: ${resultado.seller.nickname}</p>
                         <a href="#" class="btn btn-primary">Comprar</a>
                     </div>
