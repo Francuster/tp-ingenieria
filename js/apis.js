@@ -8,6 +8,7 @@ const inputBuscarProductos = document.getElementById('input-buscar-productos');
 inputBuscarProductos.addEventListener('keydown', (event) => {
     if (event.key.toLowerCase() === 'enter') {
         const busqueda = inputBuscarProductos.value;
+        if (!busqueda || busqueda.length <= 1) return;
         buscarProductos(busqueda)
     }
 })
@@ -28,7 +29,7 @@ function pintarProductos (resultados) {
             <div class="col-md-4">
                 <div class='card'>
                     <div class='card-body'>
-                        <img src="${resultado.thumbnail}" class="card-img-top" alt="Producto">
+                        <img src="${resultado.thumbnail}" class="card-img" alt="Producto">
                         <h6 class='card-title'>${resultado.title}</h6>
                         <p class='card-text'>$${resultado.price.toLocaleString()}</p>
                         <p class='card-text'>Vendedor: ${resultado.seller.nickname}</p>
