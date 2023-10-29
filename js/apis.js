@@ -26,10 +26,10 @@ function pintarProductos (resultados) {
 
     for (const resultado of resultados) {
         contenedorProductos.innerHTML += `
-            <div class="col-md-4">
+            <div class="col-md-3 mb-2">
                 <div class='card'>
                     <div class='card-body'>
-                        <img src="${resultado.thumbnail}" class="card-img" alt="Producto">
+                        <img src="${resultado.thumbnail}" class="card-img-top" alt="Producto">
                         <h6 class='card-title'>${resultado.title}</h6>
                         <p class='card-text'>$${resultado.price.toLocaleString()}</p>
                         <p class='card-text'>Vendedor: ${resultado.seller.nickname}</p>
