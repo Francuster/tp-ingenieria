@@ -11,14 +11,19 @@
     <head>
     <body class="body">
         <div id="nav"></div>  
-
-        <div>
-            <input id="input-buscar-productos" type="text" placeholder="Buscar Productos">
-        </div>
-
-        <div class="container">
-            <div class="row" id="contenedor-productos">
-
+        <div class="container-fluid">
+            <div class="mb-3 col-3">
+                <label for="input-buscar-productos" class="form-label">Buscar Productos</label>
+                <input type="text" class="form-control" id="input-buscar-productos">
+            </div>
+            <div class="mb-3 col-3">
+                <button type="button" class="btn btn-primary" onclick="onSearchAviso()">Buscar 🔍</button>
+            </div>
+    
+            <div class="container">
+                <div class="row" id="contenedor-productos">
+    
+                </div>
             </div>
         </div>
 

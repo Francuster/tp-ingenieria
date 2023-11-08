@@ -7,13 +7,17 @@ const inputBuscarProductos = document.getElementById('input-buscar-productos');
 
 inputBuscarProductos.addEventListener('keydown', (event) => {
     if (event.key.toLowerCase() === 'enter') {
-        const busqueda = inputBuscarProductos.value;
-        if (!busqueda || busqueda.length <= 1) return;
-        buscarProductos(busqueda)
+        buscarProductos()
     }
 })
 
-async function buscarProductos (busqueda) {
+function onSearchAviso(){
+    buscarProductos();
+}
+
+async function buscarProductos () {
+    const busqueda = inputBuscarProductos.value;
+        if (!busqueda || busqueda.length <= 1) return;
     const peticion = await fetch(urlMercadoLibre + busqueda, { method: 'GET' })
     const respuesta = await peticion.json();
     const resultados = respuesta.results;
