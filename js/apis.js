@@ -15,6 +15,8 @@ function onSearchAviso(){
     buscarProductos();
 }
 
+let dolar;
+
 async function buscarProductos () {
     const busqueda = inputBuscarProductos.value;
         if (!busqueda || busqueda.length <= 1) return;
@@ -22,10 +24,11 @@ async function buscarProductos () {
     const respuesta = await peticion.json();
     const resultados = respuesta.results;
     console.log(resultados)
-    pintarProductos(resultados);
+    dolar = await actualizarDolar();
+    await pintarProductos(resultados);
 }
 
-function pintarProductos (resultados) {
+async function pintarProductos (resultados) {
     contenedorProductos.innerHTML = '';
 
     for (const resultado of resultados) {
@@ -35,12 +38,24 @@ function pintarProductos (resultados) {
                     <div class='card-body'>
                         <img src="${resultado.thumbnail}" class="card-img-top" alt="Producto">
                         <h6 class='card-title'>${resultado.title}</h6>
-                        <p class='card-text'>$${resultado.price.toLocaleString()}</p>
+                        <p class='card-text'>${resultado.price.toLocaleString()} ARS</p>
+                        <p class='card-text'>${getPrecioEnDolares(resultado.price)} USD</p>
                         <p class='card-text'>Vendedor: ${resultado.seller.nickname}</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                        <a href="${resultado.permalink}" target="_blank" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>
         `
     }
+}
+
+function getPrecioEnDolares (precio) {
+    const dolarEnPesos = dolar.oficial.value_sell;
+    const precioDolares = precio / dolarEnPesos;
+    return precioDolares.toFixed().toLocaleString();
+}
+
+async function actualizarDolar () {
+    const peticion = await fetch(urlBlue, { method: 'GET' })
+    return await peticion.json()
 }
