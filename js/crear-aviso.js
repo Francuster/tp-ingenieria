@@ -19,20 +19,6 @@ function obtenerPrecio () {
     return precio;
 }
 
-inputImagen.addEventListener('change', (e) => {
-    const archivo = inputImagen.files[0];
-    if (!archivo) return;
-
-    const reader = new FileReader();
-    
-    reader.addEventListener('load', e => {
-        const imagenUrl = e.target.result;
-        document.getElementById('contenedor-imagen').innerHTML = `<img src="${imagenUrl}" class="img-fluid" alt="Imagen seleccionada">`;
-    })
-
-    reader.readAsDataURL(archivo)
-})
-
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -71,3 +57,21 @@ function actualizarStorage (imagenUrl) {
 
     localStorage.setItem('avisos', JSON.stringify(avisos));
 }
+
+function setEventoInputImagen () {
+    inputImagen.addEventListener('change', (e) => {
+        const archivo = inputImagen.files[0];
+        if (!archivo) return;
+    
+        const reader = new FileReader();
+        
+        reader.addEventListener('load', e => {
+            const imagenUrl = e.target.result;
+            document.getElementById('contenedor-imagen').innerHTML = `<img src="${imagenUrl}" class="img-fluid" alt="Imagen seleccionada">`;
+        })
+    
+        reader.readAsDataURL(archivo)
+    })
+}
+
+setEventoInputImagen();

@@ -1,4 +1,4 @@
-import {arraySitiosInteres} from './sitios-interes.js';
+import { arraySitiosInteres } from './sitios-interes.js';
 const coords = [-34.5129782, -58.6869033];
 
 function crearMapa() {
@@ -15,3 +15,21 @@ function crearMapa() {
 }
 
 crearMapa();
+
+let listaSitioInteres = document.getElementById('listaSitioInteres');
+
+for(var i = 0; i < arraySitiosInteres.length; i++){
+    let sitio = arraySitiosInteres[i];
+    let li = document.createElement('li');
+    li.className = 'list-group-item list-group-item-action';
+    li.textContent = sitio.nombre;
+    listaSitioInteres.appendChild(li);
+}
+
+listaSitioInteres.addEventListener('click', onClickSitioInteres);
+
+function onClickSitioInteres(event){
+    console.log(event.target.textContent);
+    const sitioInteres = event.target.textContent;
+
+}
