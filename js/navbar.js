@@ -19,6 +19,9 @@ const navbarTemplate = `
                     <li class="nav-item">
                         <a class="nav-link" href="avisos.html">Avisos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="crear-aviso.html">Crear Aviso</a>
+                    </li>
                 </ul>
             </div>
         </div>
