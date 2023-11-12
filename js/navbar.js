@@ -25,9 +25,6 @@ const navbarTemplate = `
                             <a class="dropdown-item" href="crear-avisos.html">Crear avisos</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="crear-aviso.html">Crear Aviso</a>
-                    </li>
                 </ul>
             </div>
         </div>
