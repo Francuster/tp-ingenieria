@@ -1,7 +1,8 @@
 const coords = [-34.5129782, -58.6869033];
 
+var map;
 function crearMapa() {
-    var map = L.map('map').setView(coords, 13);
+    map = L.map('map').setView(coords, 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -39,13 +40,16 @@ for(var i = 0; i < arraySitiosInteres.length; i++){
     let li = document.createElement('li');
     li.className = 'list-group-item list-group-item-action';
     li.textContent = sitio.nombre;
+    li.value = i;
     listaSitioInteres.appendChild(li);
+
 }
 
 listaSitioInteres.addEventListener('click', onClickSitioInteres);
 
 function onClickSitioInteres(event){
     console.log(event.target.textContent);
-    const sitioInteres = event.target.textContent;
+    const index = event.target.value;
+    map.setView(arraySitiosInteres[index].coordenadas, 16);
 
 }
