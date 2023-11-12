@@ -16,8 +16,14 @@ const navbarTemplate = `
                     <li class="nav-item">
                         <a class="nav-link" href="asistencia.html">Centros de asistencia</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="avisos.html">Avisos</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Avisos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">                                                 
+                            <a class="dropdown-item" href="buscar-avisos.html">Buscar avisos</a>
+                            <a class="dropdown-item" href="crear-avisos.html">Crear avisos</a>
+                        </div>
                     </li>
                 </ul>
             </div>
