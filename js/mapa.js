@@ -1,4 +1,3 @@
-import {arraySitiosInteres} from './sitios-interes.js';
 const coords = [-34.5129782, -58.6869033];
 
 function crearMapa() {
@@ -9,9 +8,28 @@ function crearMapa() {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map);
 
-    var marker = L.marker(coords).addTo(map);
+    function onMapClick(e) {
+        // Get the coordinates from the click event
+        var lat = e.latlng.lat;
+        var lng = e.latlng.lng;
+
+        // Log or use the coordinates as needed
+        console.log('Clicked on the map at:', lat, lng);
+        alert('lat:' + lat +' long:' + lng);
+    }
+
+    map.on('click', onMapClick);
+
+
+    //var marker = L.marker(coords).addTo(map);
     console.log(arraySitiosInteres)
+    for (let sitio of arraySitiosInteres){
+        let marker = L.marker(sitio.coordenadas).addTo(map);
+        marker.bindPopup(`<b> ${sitio.nombre}</b>`);
+    }
 
 }
+
+
 
 crearMapa();
