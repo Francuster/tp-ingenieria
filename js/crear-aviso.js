@@ -42,7 +42,7 @@ formulario.addEventListener('submit', (e) => {
     const reader = new FileReader();
     
     reader.addEventListener('load', e => {
-        const imagenUrl = e.target.result;
+        const imagenUrl = e.target.result.split(',')[1];
         actualizarStorage(imagenUrl);
     })
 
