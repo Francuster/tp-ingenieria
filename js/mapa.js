@@ -35,7 +35,7 @@ crearMapa();
 
 let listaSitioInteres = document.getElementById('listaSitioInteres');
 
-for(var i = 0; i < arraySitiosInteres.length; i++){
+for(let i = 0; i < arraySitiosInteres.length; i++){
     let sitio = arraySitiosInteres[i];
     let li = document.createElement('li');
     li.className = 'list-group-item list-group-item-action';
@@ -68,7 +68,34 @@ function onClickSitioInteres(event){
 
     let img1 = document.createElement('img');
     img1.src = sitio.foto;
+    img1.height = 300;
     sitioInteresP.appendChild(img1);
 
+
+    let atractivoElement = document.getElementById('atractivos');
+    atractivoElement.innerHTML = ``;
+    for (let j = 0; j < sitio.atractivos.length; j++){
+        console.log(sitio.atractivos[j]);
+        let atractivo = sitio.atractivos[j];
+
+
+        //create card
+        const cardTemplate = `
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+            <img src="${atractivo.foto}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${atractivo.resumen}</h5>
+                <p class="card-text">${atractivo.descripcionCompleta}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+        
+        `
+
+        atractivoElement.innerHTML += cardTemplate;
+    }
+    
 
 }
