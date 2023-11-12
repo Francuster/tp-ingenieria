@@ -24,7 +24,7 @@ const arraySitiosInteres = [
     {
         nombre: 'Terrazas de Mayo',
         descripcion: 'Shoping Terrazas de Mayo',
-        foto:'https://www.ungs.edu.ar/wp-content/uploads/2019/08/Campus-aérea4.png', 
+        foto:'https://www.totalmedios.com/img/noticias/2021/06/60c9e0f72349c__838x390.jpg',
         coordenadas: [-34.53012397898645, -58.701013326644905]
     }
 

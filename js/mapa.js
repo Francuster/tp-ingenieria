@@ -50,6 +50,25 @@ listaSitioInteres.addEventListener('click', onClickSitioInteres);
 function onClickSitioInteres(event){
     console.log(event.target.textContent);
     const index = event.target.value;
-    map.setView(arraySitiosInteres[index].coordenadas, 16);
+    let sitio = arraySitiosInteres[index];
+    map.setView(sitio.coordenadas, 16);
+
+    let sitioInteresP = document.getElementById('sitioInteresDetalle');
+
+    while (sitioInteresP.childNodes.length != 0){
+        sitioInteresP.removeChild(sitioInteresP.firstChild);
+    }
+    let p1 = document.createElement('p');
+    p1.textContent = `${sitio.nombre}`;
+    sitioInteresP.appendChild(p1);
+
+    let p2 = document.createElement('p');
+    p2.textContent = `Descripcion: ${sitio.descripcion}`;
+    sitioInteresP.appendChild(p2);
+
+    let img1 = document.createElement('img');
+    img1.src = sitio.foto;
+    sitioInteresP.appendChild(img1);
+
 
 }
