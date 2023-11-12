@@ -1,7 +1,8 @@
 const coords = [-34.5129782, -58.6869033];
 
+var map;
 function crearMapa() {
-    var map = L.map('map').setView(coords, 13);
+    map = L.map('map').setView(coords, 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -39,13 +40,35 @@ for(var i = 0; i < arraySitiosInteres.length; i++){
     let li = document.createElement('li');
     li.className = 'list-group-item list-group-item-action';
     li.textContent = sitio.nombre;
+    li.value = i;
     listaSitioInteres.appendChild(li);
+
 }
 
 listaSitioInteres.addEventListener('click', onClickSitioInteres);
 
 function onClickSitioInteres(event){
     console.log(event.target.textContent);
-    const sitioInteres = event.target.textContent;
+    const index = event.target.value;
+    let sitio = arraySitiosInteres[index];
+    map.setView(sitio.coordenadas, 16);
+
+    let sitioInteresP = document.getElementById('sitioInteresDetalle');
+
+    while (sitioInteresP.childNodes.length != 0){
+        sitioInteresP.removeChild(sitioInteresP.firstChild);
+    }
+    let p1 = document.createElement('p');
+    p1.textContent = `${sitio.nombre}`;
+    sitioInteresP.appendChild(p1);
+
+    let p2 = document.createElement('p');
+    p2.textContent = `Descripcion: ${sitio.descripcion}`;
+    sitioInteresP.appendChild(p2);
+
+    let img1 = document.createElement('img');
+    img1.src = sitio.foto;
+    sitioInteresP.appendChild(img1);
+
 
 }
