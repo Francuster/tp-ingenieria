@@ -1,4 +1,3 @@
-import { arraySitiosInteres } from './sitios-interes.js';
 const coords = [-34.5129782, -58.6869033];
 
 function crearMapa() {

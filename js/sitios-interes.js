@@ -1,6 +1,6 @@
 //hardcodear sitios de interes y atractivos turisticos
 
-export const arraySitiosInteres = [
+const arraySitiosInteres = [
     {
         nombre: 'UNGS', 
         descripcion: 'Universidad Nacional de General Sarmiento', 
