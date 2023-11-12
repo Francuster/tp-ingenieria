@@ -1,3 +1,4 @@
+import {arraySitiosInteres} from './sitios-interes.js';
 const coords = [-34.5129782, -58.6869033];
 
 function crearMapa() {
@@ -9,6 +10,8 @@ function crearMapa() {
     }).addTo(map);
 
     var marker = L.marker(coords).addTo(map);
+    console.log(arraySitiosInteres)
+
 }
 
 crearMapa();

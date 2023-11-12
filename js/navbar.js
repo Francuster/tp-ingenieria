@@ -8,7 +8,7 @@ const navbarTemplate = `
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.html">Mapa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sitios-interes.html">Sitios de interes</a>
