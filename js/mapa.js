@@ -2,6 +2,7 @@ const coords = [-34.5129782, -58.6869033];
 
 var map;
 function crearMapa() {
+    console.log('crear mapa')
     map = L.map('map').setView(coords, 13);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -16,7 +17,7 @@ function crearMapa() {
 
         // Log or use the coordinates as needed
         console.log('Clicked on the map at:', lat, lng);
-        alert('lat:' + lat +' long:' + lng);
+        alert('[' + lat +',' + lng + ']');
     }
 
     map.on('click', onMapClick);
