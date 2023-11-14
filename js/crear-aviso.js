@@ -1,7 +1,53 @@
+const contenedorFormulario = document.getElementById('contenedor-formulario')
+
+function pintarFormulario () {
+    contenedorFormulario.innerHTML = `
+        <div class="container mt-5">
+            <h2>Crear Aviso</h2>
+                <form id="formulario-aviso">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="input-nombre" placeholder="Ingrese el nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-descripcion">Descripcion:</label>
+                        <textarea class="form-control" id="input-descripcion" rows="4" placeholder="Ingrese la descripcion" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-precio">Precio:</label>
+                        <input type="number" class="form-control" id="input-precio" min="1" placeholder="Ingrese el precio" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-comercio">Comercio:</label>
+                        <select id='input-comercio' required>
+                            ${comercios.map(comercio => `<option value='${comercio.nombre}'>${comercio.nombre}</option>`)}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagen">Seleccione una imagen:</label>
+                        <input type="file" class="form-control-file" id="input-imagen" accept="image/*" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="boton-enviar">Enviar</button>
+
+                    <div class="mt-4" id="contenedor-imagen"></div>
+                </form>
+        </div>
+    `
+}
+
+pintarFormulario();
+
 const inputNombre = document.getElementById('input-nombre')
 const inputDescripcion = document.getElementById('input-descripcion')
 const inputPrecio = document.getElementById('input-precio')
 const inputImagen = document.getElementById('input-imagen')
+const inputComercio = document.getElementById('input-comercio')
+
 const formulario = document.getElementById('formulario-aviso')
 
 function obtenerNombre () {
@@ -17,6 +63,11 @@ function obtenerDescripcion () {
 function obtenerPrecio () {
     const precio = inputPrecio.value;
     return precio;
+}
+
+function obtenerComercio () {
+    const comercio = inputComercio.value;
+    return comercio;
 }
 
 formulario.addEventListener('submit', (e) => {
@@ -39,6 +90,7 @@ function actualizarStorage (imagenUrl) {
     const nombre = obtenerNombre();
     const descripcion = obtenerDescripcion();
     const precio = obtenerPrecio();
+    const comercio = obtenerComercio();
 
     let avisos = localStorage.getItem('avisos');
 
@@ -52,11 +104,14 @@ function actualizarStorage (imagenUrl) {
         nombre: nombre,
         descripcion: descripcion,
         precio: precio,
-        imagen: imagenUrl
+        comercio: comercio,
+        imagen: '../images/goku.jpg'
     })
 
     localStorage.setItem('avisos', JSON.stringify(avisos));
 }
+
+const inputContenedorImagen = document.getElementById('contenedor-imagen');
 
 function setEventoInputImagen () {
     inputImagen.addEventListener('change', (e) => {
@@ -67,7 +122,7 @@ function setEventoInputImagen () {
         
         reader.addEventListener('load', e => {
             const imagenUrl = e.target.result;
-            document.getElementById('contenedor-imagen').innerHTML = `<img src="${imagenUrl}" class="img-fluid" alt="Imagen seleccionada">`;
+            inputContenedorImagen.innerHTML = `<img src="${imagenUrl}" class="img-fluid" alt="Imagen seleccionada">`;
         })
     
         reader.readAsDataURL(archivo)
