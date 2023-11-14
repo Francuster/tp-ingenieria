@@ -31,21 +31,24 @@ function crearMapa() {
 
 }
 
-crearMapa();
 
-let listaSitioInteres = document.getElementById('listaSitioInteres');
 
-for(let i = 0; i < arraySitiosInteres.length; i++){
-    let sitio = arraySitiosInteres[i];
-    let li = document.createElement('li');
-    li.className = 'list-group-item list-group-item-action';
-    li.textContent = sitio.nombre;
-    li.value = i;
-    listaSitioInteres.appendChild(li);
+function inicializarSitiosInteres(){
+    let listaSitioInteres = document.getElementById('listaSitioInteres');
 
+    for(let i = 0; i < arraySitiosInteres.length; i++){
+        let sitio = arraySitiosInteres[i];
+        let li = document.createElement('li');
+        li.className = 'list-group-item list-group-item-action';
+        li.textContent = sitio.nombre;
+        li.value = i;
+        listaSitioInteres.appendChild(li);
+
+    }
+
+    listaSitioInteres.addEventListener('click', onClickSitioInteres);
 }
 
-listaSitioInteres.addEventListener('click', onClickSitioInteres);
 
 function onClickSitioInteres(event){
     console.log(event.target.textContent);
@@ -60,7 +63,7 @@ function onClickSitioInteres(event){
     }
     let p1 = document.createElement('p');
     p1.textContent = `${sitio.nombre}`;
-    sitioInteresP.appendChild(p1);
+    sitioInteresP.appendChild(p1
 
     let p2 = document.createElement('p');
     p2.textContent = `Descripcion: ${sitio.descripcion}`;
@@ -99,3 +102,6 @@ function onClickSitioInteres(event){
     
 
 }
+
+crearMapa();
+inicializarSitiosInteres();
