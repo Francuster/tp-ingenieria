@@ -23,7 +23,7 @@ function pintarFormulario () {
                     <div class="form-group">
                         <label for="input-comercio" >Comercio:</label>
                         <select id='input-comercio' class="form-select" aria-label="Default select example" required>
-                            ${comercios.map(comercio => `<option value='${comercio.nombre}'>${comercio.nombre}</option>`)}
+                            ${comerciosArray.map(comercio => `<option value='${comercio.nombre}'>${comercio.nombre}</option>`)}
                         </select>
                     </div>
 
