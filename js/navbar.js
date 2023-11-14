@@ -8,10 +8,7 @@ const navbarTemplate = `
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Mapa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sitios-interes.html">Sitios de interes</a>
+                        <a class="nav-link" aria-current="page" href="index.html">Sitios de interes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="asistencia.html">Centros de asistencia</a>
@@ -24,6 +21,9 @@ const navbarTemplate = `
                             <a class="dropdown-item" href="buscar-avisos.html">Buscar avisos</a>
                             <a class="dropdown-item" href="crear-avisos.html">Crear avisos</a>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comercios.html">Busqueda de comercios</a>
                     </li>
                 </ul>
             </div>
