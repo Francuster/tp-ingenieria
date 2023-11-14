@@ -55,6 +55,33 @@ function obtenerNombre () {
     return nombre;
 }
 
+const contenedorAvisosSimilares = document.getElementById('contenedor-avisos-similares')
+
+inputNombre.addEventListener('blur', async e => {
+    await actualizarDolar();
+    const nombre = obtenerNombre();
+    const avisosSimilares = await buscarProductos(nombre);
+    const formato = new Intl.NumberFormat('es-ES');
+    contenedorAvisosSimilares.innerHTML = '';
+
+    for (aviso of avisosSimilares) {
+        contenedorAvisosSimilares.innerHTML += `
+            <div class="col-md-3 mb-1">
+                <div class='card'>
+                    <div class='card-body'>
+                        <img src="${aviso.thumbnail}" class="card-img-top" alt="Producto">
+                        <h6 class='card-title'>${aviso.title}</h6>
+                        <p class='card-text'>$ ${formato.format(aviso.price)} ARS</p>
+                        <p class='card-text'>$ ${formato.format(getPrecioEnDolares(aviso.price).toFixed(2))} USD</p>
+                        <p class='card-text'>Vendedor: ${aviso.seller.name}</p>
+                        <a href="#" target="_blank" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        `
+    }
+})
+
 function obtenerDescripcion () {
     const descripcion = inputDescripcion.value;
     return descripcion;
