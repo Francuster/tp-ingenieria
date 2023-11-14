@@ -5,34 +5,34 @@ function pintarFormulario () {
         <div class="container mt-5">
             <h2>Crear Aviso</h2>
                 <form id="formulario-aviso">
-                    <div class="form-group">
-                        <label for="nombre">Nombre:</label>
+                    <div class="form-group mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
                         <input type="text" class="form-control" id="input-nombre" placeholder="Ingrese el nombre" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="input-descripcion">Descripcion:</label>
+                    <div class="form-group mb-3">
+                        <label for="input-descripcion" class="form-label">Descripcion:</label>
                         <textarea class="form-control" id="input-descripcion" rows="4" placeholder="Ingrese la descripcion" required></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label for="input-precio">Precio:</label>
+                    <div class="form-group mb-3">
+                        <label for="input-precio" class="form-label">Precio:</label>
                         <input type="number" class="form-control" id="input-precio" min="1" placeholder="Ingrese el precio" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="input-comercio" >Comercio:</label>
+                    <div class="form-group mb-3">
+                        <label for="input-comercio" class="form-label">Comercio:</label>
                         <select id='input-comercio' class="form-select" aria-label="Default select example" required>
                             ${comerciosArray.map(comercio => `<option value='${comercio.nombre}'>${comercio.nombre}</option>`)}
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="imagen">Seleccione una imagen:</label>
+                    <div class="form-group mb-3">
+                        <label for="imagen" class="form-label">Seleccione una imagen:</label>
                         <input type="file" class="form-control-file" id="input-imagen" accept="image/*" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" id="boton-enviar">Enviar</button>
+                    <button type="submit" class="btn btn-primary " id="boton-enviar">Enviar</button>
 
                     <div class="mt-4" id="contenedor-imagen"></div>
                 </form>
