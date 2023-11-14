@@ -111,7 +111,7 @@ const arraySitiosInteres = [
         nombre: 'Liyue',
         descripcion: 'Ciudad de los contratos',
         foto:'https://live.staticflickr.com/65535/50859450722_9e47e52378_o.jpg', 
-        coordenadas: [-34.49523909266902, -58.72690200805665],
+        coordenadas: [-34.51702396789497, -58.74423980712891],
         atractivos: [
             {
                 resumen: 'Lisha',
