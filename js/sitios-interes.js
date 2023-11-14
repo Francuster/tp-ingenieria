@@ -3,12 +3,7 @@
 
 function inicializarSitiosInteres(){
 
-    //var marker = L.marker(coords).addTo(map);
-    console.log(sitiosInteresArray)
-    for (let sitio of sitiosInteresArray){
-        let marker = L.marker(sitio.coordenadas).addTo(map);
-        marker.bindPopup(`<b> ${sitio.nombre}</b>`);
-    }
+    //cargar mapa
 
     let listaSitioInteres = document.getElementById('listaSitioInteres');
 
@@ -19,6 +14,9 @@ function inicializarSitiosInteres(){
         li.textContent = sitio.nombre;
         li.value = i;
         listaSitioInteres.appendChild(li);
+
+        let marker = L.marker(sitio.coordenadas).addTo(map);
+        marker.bindPopup(`<b> ${sitio.nombre}</b>`);
 
     }
 

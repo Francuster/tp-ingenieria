@@ -18,12 +18,6 @@ const sitiosInteresArray = [
         ]
     },
     {
-        nombre: 'Municipio de Malvinas Argentinas',
-        descripcion: 'Oficina de Gobierno Local',
-        foto:'https://observatorio.madretierra.org.ar/wp-content/uploads/2022/09/municipalidad-malvinas-argentinas-696x386-1.jpg',
-        coordenadas: [-34.49767380192895, -58.70090154542923]
-    },
-    {
         nombre: 'Terrazas de Mayo',
         descripcion: 'Shopping Terrazas de Mayo',
         foto:'https://dycasa.com/wp-content/uploads/2014/12/IMG_6151-rr.jpg',

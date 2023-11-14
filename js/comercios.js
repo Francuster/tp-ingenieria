@@ -1,12 +1,18 @@
 function inicializarComercios(){
+
+
     let comerciosList = document.getElementById('comerciosList');
     for(let i = 0; i < comerciosArray.length; i++){
-        let sitio = comerciosArray[i];
+        let comercio = comerciosArray[i];
         let li = document.createElement('li');
         li.className = 'list-group-item list-group-item-action';
-        li.textContent = sitio.nombre;
+        li.textContent = comercio.nombre;
         li.value = i;
         comerciosList.appendChild(li);
+
+        //cargar mapa
+        let marker = L.marker(comercio.coordenadas).addTo(map);
+        marker.bindPopup(`<b> ${comercio.nombre}</b>`);
     }
 
     comerciosList.addEventListener('click', onClickComercio);
@@ -15,6 +21,8 @@ async function onClickComercio(event){
     await actualizarDolar();
     const index = event.target.value;
     const comercio = comerciosArray[index];
+    map.setView(comercio.coordenadas, 16);
+
 
     let datosComercioDiv = document.getElementById('datosComercio');
     datosComercioDiv.innerHTML = `
