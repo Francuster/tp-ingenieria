@@ -1,4 +1,4 @@
-const comercios = [
+const comerciosArray = [
     {
         nombre: 'Sodimac',
         descripcion: 'Venta de eletro, muebles y decoracion',
