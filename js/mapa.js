@@ -63,7 +63,7 @@ function onClickSitioInteres(event){
     }
     let p1 = document.createElement('p');
     p1.textContent = `${sitio.nombre}`;
-    sitioInteresP.appendChild(p1
+    sitioInteresP.appendChild(p1);
 
     let p2 = document.createElement('p');
     p2.textContent = `Descripcion: ${sitio.descripcion}`;
