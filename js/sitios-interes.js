@@ -27,7 +27,6 @@ function inicializarSitiosInteres(){
 
 
 function onClickSitioInteres(event){
-    console.log(event.target.textContent);
     const index = event.target.value;
     let sitio = sitiosInteresArray[index];
     map.setView(sitio.coordenadas, 16);

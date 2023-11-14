@@ -11,5 +11,5 @@ async function actualizarDolar () {
 function getPrecioEnDolares (precio) {
     const dolarEnPesos = dolar.oficial.value_sell;
     const precioDolares = precio / dolarEnPesos;
-    return precioDolares;
+    return precioDolares.toFixed(2);
 }

@@ -68,13 +68,12 @@ inputNombre.addEventListener('blur', async e => {
         contenedorAvisosSimilares.innerHTML += `
             <div class="col-md-3 mb-1">
                 <div class='card'>
+                    <img src="${aviso.thumbnail}" class="card-img-top" alt="Producto">
                     <div class='card-body'>
-                        <img src="${aviso.thumbnail}" class="card-img-top" alt="Producto">
                         <h6 class='card-title'>${aviso.title}</h6>
                         <p class='card-text'>$ ${formato.format(aviso.price)} ARS</p>
-                        <p class='card-text'>$ ${formato.format(getPrecioEnDolares(aviso.price).toFixed(2))} USD</p>
+                        <p class='card-text'>$ ${formato.format(getPrecioEnDolares(aviso.price))} USD</p>
                         <p class='card-text'>Vendedor: ${aviso.seller.name}</p>
-                        <a href="#" target="_blank" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>
@@ -118,6 +117,7 @@ function actualizarStorage (imagenUrl) {
     const descripcion = obtenerDescripcion();
     const precio = obtenerPrecio();
     const comercio = obtenerComercio();
+    const imagen = inputImagen.value;
 
     let avisos = localStorage.getItem('avisos');
 
