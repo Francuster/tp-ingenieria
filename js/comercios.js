@@ -54,7 +54,7 @@ async function onClickComercio(event){
         const cardTemplate = `
         <div class="col">
             <div class="card" style="width: 18rem;">
-            <img src="${aviso.imagen}" class="card-img-top" alt="...">
+            <img src="/images/bolsa.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${aviso.nombre}</h5>
                 <p class="card-text">${aviso.descripcion}</p>
