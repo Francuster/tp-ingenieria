@@ -1,4 +1,4 @@
-const movilesAsistencia = [
+const arrayMovilesAsistencia = [
     {
         lugar: "Sumeru",
         diaAtencion: "Lunes a Lunes",

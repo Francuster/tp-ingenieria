@@ -63,7 +63,6 @@ function onClickSitioInteres(event){
             <div class="card-body">
                 <h5 class="card-title">${atractivo.resumen}</h5>
                 <p class="card-text">${atractivo.descripcionCompleta}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
             </div>
         </div>
