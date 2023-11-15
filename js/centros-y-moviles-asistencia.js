@@ -31,7 +31,7 @@ function inicializarCentrosYMovilesDeAsistencia(){
         let movil = arrayMovilesAsistencia[i];
         let li = document.createElement('li');
         li.className = 'list-group-item list-group-item-action';
-        li.textContent = "Patrulla";
+        li.textContent = "Patrulla " + (i+1);
         li.value = i;
         listaMoviles.appendChild(li);
 
@@ -41,12 +41,16 @@ function inicializarCentrosYMovilesDeAsistencia(){
     listaMoviles.addEventListener('click', onClickMovilAsistencia);
 }
 
+let centrosAsistencia = document.getElementById('centroDetalle');
+
+let movilesAsistencia = document.getElementById('movilDetalle');
+
 function onClickCentroAsistencia(event){
     const index = event.target.value;
     let centro = arrayCentrosAsistencia[index];
     map.setView(centro.coordenadas, 16);
 
-    let centrosAsistencia = document.getElementById('centroDetalle');
+    movilesAsistencia.innerHTML = '';
 
     while (centrosAsistencia.childNodes.length != 0){
         centrosAsistencia.removeChild(centrosAsistencia.firstChild);
@@ -74,7 +78,7 @@ function onClickMovilAsistencia(event){
     let movil = arrayMovilesAsistencia[index];
     map.setView(movil.coordenadas, 16);
 
-    let movilesAsistencia = document.getElementById('movilDetalle');
+    centrosAsistencia.innerHTML = '';
 
     while (movilesAsistencia.childNodes.length != 0){
         movilesAsistencia.removeChild(movilesAsistencia.firstChild);
