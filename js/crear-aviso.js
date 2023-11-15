@@ -1,52 +1,15 @@
-const contenedorFormulario = document.getElementById('contenedor-formulario')
+const inputComercio = document.getElementById('input-comercio')
 
-function pintarFormulario () {
-    contenedorFormulario.innerHTML = `
-        <div class="container mt-5">
-            <h2>Crear Aviso</h2>
-                <form id="formulario-aviso">
-                    <div class="form-group mb-3">
-                        <label for="nombre" class="form-label">Nombre:</label>
-                        <input type="text" class="form-control" id="input-nombre" placeholder="Ingrese el nombre" required>
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <label for="input-descripcion" class="form-label">Descripcion:</label>
-                        <textarea class="form-control" id="input-descripcion" rows="4" placeholder="Ingrese la descripcion" required></textarea>
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <label for="input-precio" class="form-label">Precio:</label>
-                        <input type="number" class="form-control" id="input-precio" min="1" placeholder="Ingrese el precio" required>
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <label for="input-comercio" class="form-label">Comercio:</label>
-                        <select id='input-comercio' class="form-select" aria-label="Default select example" required>
-                            ${comerciosArray.map(comercio => `<option value='${comercio.nombre}'>${comercio.nombre}</option>`)}
-                        </select>
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <label for="imagen" class="form-label">Seleccione una imagen:</label>
-                        <input type="file" class="form-control-file" id="input-imagen" accept="image/*" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary " id="boton-enviar">Enviar</button>
-
-                    <div class="mt-4" id="contenedor-imagen"></div>
-                </form>
-        </div>
-    `
+function pintarOpcionesComercios () {
+    inputComercio.innerHTML = comerciosArray.map(comercio => `<option value='${comercio.nombre}'>${comercio.nombre}</option>`);
 }
 
-pintarFormulario();
+pintarOpcionesComercios();
 
 const inputNombre = document.getElementById('input-nombre')
 const inputDescripcion = document.getElementById('input-descripcion')
 const inputPrecio = document.getElementById('input-precio')
 const inputImagen = document.getElementById('input-imagen')
-const inputComercio = document.getElementById('input-comercio')
 
 const formulario = document.getElementById('formulario-aviso')
 
@@ -59,6 +22,7 @@ const contenedorAvisosSimilares = document.getElementById('contenedor-avisos-sim
 
 inputNombre.addEventListener('blur', async e => {
     await actualizarDolar();
+    
     const nombre = obtenerNombre();
     const avisosSimilares = await buscarProductos(nombre);
     const formato = new Intl.NumberFormat('es-ES');
@@ -117,7 +81,6 @@ function actualizarStorage (imagenUrl) {
     const descripcion = obtenerDescripcion();
     const precio = obtenerPrecio();
     const comercio = obtenerComercio();
-    const imagen = inputImagen.value;
 
     let avisos = localStorage.getItem('avisos');
 
@@ -132,10 +95,29 @@ function actualizarStorage (imagenUrl) {
         descripcion: descripcion,
         precio: precio,
         comercio: comercio,
-        imagen: '../images/goku.jpg'
+        imagen: '../images/bolsa.jpg'
     })
 
     localStorage.setItem('avisos', JSON.stringify(avisos));
+    mostrarAlertaConfirmacion()
+    reiniciarFormulario();
+}
+
+function reiniciarFormulario () {
+    inputNombre.value = ''
+    inputDescripcion.value = ''
+    inputPrecio.value = 0
+    inputComercio.value = 'Sodimac'
+    contenedorAvisosSimilares.innerHTML = ''
+    inputContenedorImagen.innerHTML = ''
+}
+
+function mostrarAlertaConfirmacion () {
+    Swal.fire({
+        title: 'Aviso Creado',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    })
 }
 
 const inputContenedorImagen = document.getElementById('contenedor-imagen');

@@ -36,7 +36,7 @@ function pintarProductos (resultados) {
             <div class="col-md-3 mb-2">
                 <div class='card'>
                     <div class='card-body'>
-                        <img src="../images/goku.jpg" class="card-img-top" alt="Producto">
+                        <img src="../images/bolsa.jpg" class="card-img-top" alt="Producto">
                         <h6 class='card-title'>${resultado.nombre}</h6>
                         <p class='card-text'>$ ${formato.format(resultado.precio)} ARS</p>
                         <p class='card-text'>$ ${formato.format(getPrecioEnDolares(resultado.precio))} USD</p>
