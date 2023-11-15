@@ -1,10 +1,4 @@
-//hardcodear sitios de interes y atractivos turisticos
-
-
 function inicializarSitiosInteres(){
-
-    //cargar mapa
-
     let listaSitioInteres = document.getElementById('listaSitioInteres');
 
     for(let i = 0; i < sitiosInteresArray.length; i++){
@@ -17,7 +11,6 @@ function inicializarSitiosInteres(){
 
         let marker = L.marker(sitio.coordenadas).addTo(map);
         marker.bindPopup(`<b> ${sitio.nombre}</b>`);
-
     }
 
     listaSitioInteres.addEventListener('click', onClickSitioInteres);
@@ -54,19 +47,16 @@ function onClickSitioInteres(event){
         console.log(sitio.atractivos[j]);
         let atractivo = sitio.atractivos[j];
 
-
-        //create card
         const cardTemplate = `
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-            <img src="${atractivo.foto}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${atractivo.resumen}</h5>
-                <p class="card-text">${atractivo.descripcionCompleta}</p>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                <img src="${atractivo.foto}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${atractivo.resumen}</h5>
+                    <p class="card-text">${atractivo.descripcionCompleta}</p>
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
-        
         `
 
         atractivoElement.innerHTML += cardTemplate;

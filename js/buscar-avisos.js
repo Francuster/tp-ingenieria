@@ -10,15 +10,20 @@ inputBuscarAvisos.addEventListener('keydown', (event) => {
 
 botonBuscarAvisos.addEventListener('click', buscarAvisos);
 
+inputBuscarAvisos.addEventListener('keydown', e => {
+    buscarAvisos();
+})
+
+buscarAvisos();
+
 async function buscarAvisos () {
     await actualizarDolar();
 
     const criterio = inputBuscarAvisos.value.toLowerCase();
-    if (!criterio || criterio.length <= 1) return;
 
     let avisos = localStorage.getItem('avisos');
     if (!avisos) {
-        avisos = { lista: [] };
+        avisos = { lista: datos_avisos };
         localStorage.setItem('avisos', JSON.stringify(avisos))
     }
     

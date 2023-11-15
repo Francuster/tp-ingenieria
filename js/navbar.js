@@ -8,22 +8,22 @@ const navbarTemplate = `
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Sitios de interes</a>
+                        <a class="nav-link" aria-current="page" href="index.html">Sitios de Interés</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="asistencia.html">Centros de asistencia</a>
+                        <a class="nav-link" href="asistencia.html">Centros de Asistencia</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Avisos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">                                                 
-                            <a class="dropdown-item" href="buscar-avisos.html">Buscar avisos</a>
-                            <a class="dropdown-item" href="crear-avisos.html">Crear avisos</a>
+                            <a class="dropdown-item" href="buscar-avisos.html">Buscar Avisos</a>
+                            <a class="dropdown-item" href="crear-avisos.html">Crear Avisos</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="comercios.html">Busqueda de comercios</a>
+                        <a class="nav-link" href="comercios.html">Búsqueda de Comercios</a>
                     </li>
                 </ul>
             </div>

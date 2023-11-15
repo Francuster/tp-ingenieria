@@ -22,7 +22,7 @@ const contenedorAvisosSimilares = document.getElementById('contenedor-avisos-sim
 
 inputNombre.addEventListener('blur', async e => {
     await actualizarDolar();
-    
+
     const nombre = obtenerNombre();
     const avisosSimilares = await buscarProductos(nombre);
     const formato = new Intl.NumberFormat('es-ES');
@@ -37,7 +37,7 @@ inputNombre.addEventListener('blur', async e => {
                         <h6 class='card-title'>${aviso.title}</h6>
                         <p class='card-text'>$ ${formato.format(aviso.price)} ARS</p>
                         <p class='card-text'>$ ${formato.format(getPrecioEnDolares(aviso.price))} USD</p>
-                        <p class='card-text'>Vendedor: ${aviso.seller.name}</p>
+                        <p class='card-text'>Vendedor: ${aviso.seller.nickname}</p>
                     </div>
                 </div>
             </div>
@@ -108,6 +108,7 @@ function reiniciarFormulario () {
     inputDescripcion.value = ''
     inputPrecio.value = 0
     inputComercio.value = 'Sodimac'
+    inputImagen.value = ''
     contenedorAvisosSimilares.innerHTML = ''
     inputContenedorImagen.innerHTML = ''
 }
