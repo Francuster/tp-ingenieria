@@ -26,12 +26,12 @@ async function onClickComercio(event){
 
     let datosComercioDiv = document.getElementById('datosComercio');
     datosComercioDiv.innerHTML = `
-    <h2>Datos Comercio</h2>
-    <p>Nombre: ${comercio.nombre}</p>
-    <p>Descripcion: ${comercio.descripcion}</p>
-    <p>Direccion: ${comercio.direccion}</p>
-    <p>Horarios: ${comercio.horarios}</p>
-    <p>Telefono: ${comercio.telefono}</p>
+        <h2>Datos Comercio</h2>
+        <p>Nombre: ${comercio.nombre}</p>
+        <p>Descripcion: ${comercio.descripcion}</p>
+        <p>Direccion: ${comercio.direccion}</p>
+        <p>Horarios: ${comercio.horarios}</p>
+        <p>Telefono: ${comercio.telefono}</p>
     `;
 
     let avisosDiv = document.getElementById('avisos');

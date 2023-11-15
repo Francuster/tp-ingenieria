@@ -95,7 +95,7 @@ function actualizarStorage (imagenUrl) {
         descripcion: descripcion,
         precio: precio,
         comercio: comercio,
-        imagen: '../images/bolsa.jpg'
+        imagen: '/images/bolsa.jpg'
     })
 
     localStorage.setItem('avisos', JSON.stringify(avisos));
