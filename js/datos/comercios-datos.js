@@ -1,7 +1,7 @@
 const comerciosArray = [
     {
         nombre: 'Sodimac',
-        descripcion: 'Venta de electro, muebles y decoracion',
+        descripcion: 'Venta de electro, muebles y decoración',
         direccion: 'Calle falsa 123',
         horarios: '9:00 a 21:00 hs',
         telefono: '1234-5678',
@@ -9,7 +9,7 @@ const comerciosArray = [
     },
     {
         nombre: 'Easy',
-        descripcion: 'Venta de electro, muebles y decoracion',
+        descripcion: 'Artículos para la construcción y equipamiento para hogar y jardín',
         direccion: 'Calle verdadera 222',
         horarios: '9:00 a 21:00 hs',
         telefono: '5678-1234',
@@ -17,7 +17,7 @@ const comerciosArray = [
     },
     {
         nombre: 'Carrefour',
-        descripcion: 'Venta de electro, muebles y decoracion',
+        descripcion: 'Cadena multinacional de distribución de origen francés',
         direccion: 'Calle verdadera 333',
         horarios: '9:00 a 21:00 hs',
         telefono: '5678-1234',
@@ -25,8 +25,8 @@ const comerciosArray = [
     },
     {
         nombre: 'Dia',
-        descripcion: 'Venta de electro, muebles y decoracion',
-        direccion: 'Calle verdadera 444',
+        descripcion: 'Distribuidora alimentaria, productos de hogar y cuidado personal',
+        direccion: 'Calle falsa 666',
         horarios: '9:00 a 21:00 hs',
         telefono: '5678-1234',
         coordenadas: [-34.500898049218456,-58.642101287841804]
